@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html style="display: flex;
 flex-direction: column;
-align-items: center;">>
+align-items: center;">
     <head>
         <link rel="stylesheet" href="style.css">
         <style>
@@ -9,8 +9,8 @@ align-items: center;">>
                 border: 2px solid #01449f ;
                 border-radius: 25px;
                 display: flex;
-                width: 800px;
-                height: 650px;
+                width: 810px;
+                height: 700px;
             }
             .img{
                 width: 250px;
@@ -78,31 +78,50 @@ align-items: center;">>
         <div class="signUpField">
             <img src="images/download.jpg" alt="Library" class="img">
          <div class="signUpBorder">
-            <a href="index.html" class="imgL"><img src="images/Logoupdated1.png" alt="logo"   ></a>
-        <form class="signUp">
+            <a href="index.php" class="imgL"><img src="images/Logoupdated1.png" alt="logo"   ></a>
+        <form class="signUp" id="form">
             <h2>SignUp</h2><br>
             <div class="first_row">
+                <div class = "form-control">
             <input type="text" onfocus="this.value=''" value="Name" id="name" class="borders">
             <label style="color: red;" for="name" id="nameMsg"></label>
-            <input type="text" onfocus="this.value=''" value="Surname" id="surname" class="borders">
+            <small>Error message</small>
+            </div>
+            <div class = "form-control">
+            <input type="text" onfocus="this.value=''"  value="Surname" id="surname" class="borders">
             <label style="color: red;" for="surname" id="snameMsg"></label>
+            <small>Error message</small>
+        </div>
         </div><br>
+        <div class = "form-control">
             <input type="text" onfocus="this.value=''" value="Username" id="username" class="borders">
-            <label style="color: red;" for="name" id="unameMsg"></label>
+            <label style="color: red;" for="username" id="unameMsg"></label>
+            <small>Error message</small>
+        </div>
             <br>
+            <div class = "form-control">
             <input type="text" onfocus="this.value=''" value="E-mail" id="email" class="borders">
-            <label style="color: red;" for="name" id="emailMsg"></label>
+            <label style="color: red;" for="email" id="emailMsg"></label>
+            <small>Error message</small>
+        </div>
             <br>
+
             <div class="first_row">
+                <div class = "form-control">
             <input type="password" onfocus="this.value=''" value="Password"id="password" class="borders">
-            <label style="color: red;" for="name" id="passMsg"></label>
+            <label style="color: red;" for="password" id="passMsg"></label>
+            <small>Error message</small>
+        </div>
+            <div class = "form-control">
             <input type="password" onfocus="this.value=''" value="Password"id="password2" class="borders">
-            <label style="color: red;" for="name" id="pass1Msg"></label>
+            <label style="color: red;" for="vPassword" id="pass1Msg"></label>
+            <small>Error message</small>
+        </div>
         </div>
             <br>
             <input type="submit" onclick="event" value="SignUp" id = "signUpButton">
             <br>
-            <a href="LogIn.html" style="text-emphasis: none;"><p style="color:#2b81ff;">Have an account? Log In</p></a>
+            <a href="LogIn.php" style="text-emphasis: none;"><p style="color:#2b81ff;">Have an account? Log In</p></a>
         </form>
     </div>
     </div>

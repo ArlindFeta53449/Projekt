@@ -10,14 +10,14 @@
 <body>
     <div class="App">
     <div class="header">
-        <a href="index.html">
+        <a href="index.php">
         <img src="images/Logoupdated1.png" alt="Sigma Library">
         </a>
         <ul>
-            <li><a href="index.html">Home</li></a>
-			<li><a href="Books.html">Books</li></a>
-			<li><a href="aboutus.html">About Us</li></a>
-            <li><a href="LogIn.html">LogIn/Register</li></a>
+            <li><a href="index.php">Home</li></a>
+			<li><a href="Books.php">Books</li></a>
+			<li><a href="aboutus.php">About Us</li></a>
+            <li><a href="LogIn.php">LogIn/Register</li></a>
         </ul>
     </div>
 
@@ -108,8 +108,30 @@
         <div class="container-3">
             <div class="row">
                 <h2 class="features-title">Featured <span style="color: #01449f;">Books</span></h2>
-                <div class="books">
-                    <div class="book">
+                
+                </div>
+                
+                <div class="Slide">
+                <button class="left"><</button>
+            <div class= "slider">
+                
+                <div class="booko" id='firstClone'>
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/lordoftheflies.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Lord of the Flies</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $44.00
+                            </span>
+                            $25.00
+                        </div>
+                </div>
+                    <div class="booko">
                         <a href="#">
                             <figure class="book-img-wrapper">
                                 <img src="images/theartofcomputerprogramming.jpg" alt class="book-img">
@@ -121,8 +143,9 @@
                         <div class="book-price">
                             $29.00
                         </div>    
+                        
                     </div>
-                    <div class="book">
+                    <div class="booko">
                         <a href="#">
                             <figure class="book-img-wrapper">
                                 <img src="images/thepragmaticprogrammer.jpg" alt class="book-img">
@@ -135,7 +158,7 @@
                             $35.00
                         </div>
                     </div>
-                    <div class="book">
+                    <div class="booko">
                         <a href="#">
                             <figure class="book-img-wraper">
                                 <img src="images/Animalfarm.jpg" alt class="book-img">
@@ -148,7 +171,7 @@
                             $44.00
                         </div>
                     </div>
-                    <div class="book">
+                    <div class="booko">
                         <a href="#">
                             <figure class="book-img-wrapper">
                                 <img src="images/atomichabits.jpg" alt class="book-img">
@@ -160,8 +183,162 @@
                         <div class="book-price">
                             $22.00
                         </div>
+                        
                     </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/the-art-of-war-349.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">The Art of War</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $49.00
+                            </span>
+                            $14.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/thehobbit.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">The Hobbit</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $51.99
+                            </span>
+                            $22.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/crackignthecodinginterview.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Cracking the Coding Interview</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $32.99
+                            </span>
+                            $15.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/tokillamockingbird.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">To Kill a Mockingbird</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $42.00
+                            </span>
+                            $34.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/divinecomedy.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Divine Comedy</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $50.00
+                            </span>
+                            $37.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/thelionthewitch.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">The Lion,the Witch and the Wardrobe</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $44.00
+                            </span>
+                            $25.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/slaughterhouse-five.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Slaughterhouse-five</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $50.00
+                            </span>
+                            $37.00
+                        </div>
+                    </div>
+                    <div class="booko">
+                        <figure class="book-img-wrapper">
+                        <a href="#">
+                            <img src="images/lordoftheflies.jpg" alt class="book-img">
+                        </a>
+                        </figure>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">Lord of the Flies</a>
+                        </div>
+                        <div class="book-price">
+                            <span class="book-price-normal">
+                                $44.00
+                            </span>
+                            $25.00
+                        </div>
+                    </div>
+                    <div class="booko" id='firstClone'>
+                        <a href="#">
+                            <figure class="book-img-wrapper">
+                                <img src="images/theartofcomputerprogramming.jpg" alt class="book-img">
+                            </figure>
+                        </a>
+                        <div class="book-title">
+                            <a class="book-title-link" href="#">The Art of Computer Programming</a>
+                        </div>
+                        <div class="book-price">
+                            $29.00
+                        </div>    
+                        
+                    </div>
+
+
+                
+                    
                 </div>
+                <button class="right">></button>
+            </div>  
+            
+            </div> 
+            
+                </div>
+                
             </div>
         </div>
     </section>
@@ -331,6 +508,6 @@
 
 
 
-
+<script src="Slider.js"></script>
 </body>
 </html>

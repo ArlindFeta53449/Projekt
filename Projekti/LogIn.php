@@ -84,7 +84,7 @@ align-items: center;">
         <img src="images/download.jpg" alt="bookshelf" class="imgA">
         <div class="right-side">
          
-           <a href="index.html" class="imgL"><img src="images/Logoupdated1.png" alt="logo"   ></a>
+           <a href="index.php" class="imgL"><img src="images/Logoupdated1.png" alt="logo"   ></a>
            
         <form>
             
@@ -96,7 +96,7 @@ align-items: center;">
                 <br>
                 <input type="submit" value="LogIn" id = "logInButton">
                 <br>
-                <a href="SignUp.html"><p style="color:#2b81ff;">I do not have an account/SignUp</p></a>
+                <a href="SignUp.php"><p style="color:#2b81ff;">I do not have an account/SignUp</p></a>
             </div> </form></div>
         </div>
     </body>

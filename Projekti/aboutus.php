@@ -10,14 +10,14 @@
     <body>
     <div class="App">
         <div class="header">
-            <a href="index.html">
+            <a href="index.php">
             <img src="images/Logoupdated1.png" alt="Sigma Library">
             </a>
             <ul>
-                <li><a href="index.html">Home</li></a>
-                <li><a href="Books.html">Books</li></a>
-                <li><a href="aboutus.html">About Us</a></li>
-                <li><a href="LogIn.html">LogIn/Register</li></a>
+                <li><a href="index.php">Home</li></a>
+                <li><a href="Books.php">Books</li></a>
+                <li><a href="aboutus.php">About Us</a></li>
+                <li><a href="LogIn.php">LogIn/Register</li></a>
             </ul>
         </div>
         

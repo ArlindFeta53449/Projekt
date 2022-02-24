@@ -1,114 +1,103 @@
-var name= document.getElementById("name").value;
-var surname = document.getElementById("surname").value;
-var username = document.getElementById("username").value;
-var email = document.getElementById("email").value;
-var password = document.getElementById("password").value;
-var vPassword = document.getElementById("password2").value;
-var button = document.getElementById("signUpButton");
+const form = document.getElementById('form');
+const namee = document.getElementById('name');
+const surname = document.getElementById('surname');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
 
-var nameRegex = /^[A-Z][a-z]{2,15}/;
-var surnameRegex = /^[A-Z][a-z]{2,15}/;
-var usernameRegex = /^\w+[_.]?\w{2,10}/;
-var email = /^\w[._-]?\w@[A-Za-z][-]?[A-Za-z]\.[A-Za-z]{2,3}/ ;
-var password = /^[A-Z][a-z]+\d{3}[!_-]?{1}/;
-button.addEventListener("click" ,function(event){
-    var name = document.getElementById("name").value;
-    var surname = document.getElementById("surname").value;
-    var username = document.getElementsById("username").value;
-    var email= document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    if(name == ""){
-        nameMsg.innerText='Fill name!';
-        event.preventDefault();
+form.addEventListener('submit',(e) =>{
+    e.preventDefault();
+
+    checkInput();
+
+});
+function checkInput(){
+    const nameValue = namee.value.trim();
+    const surnameValue = surname.value.trim();
+    const usernameValue = username.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+    const password2Value = password2.value.trim();
+
+    if(nameValue === ''){
+       setError(namee,"Emri nuk mund te jete i zbrazet");
+    }else if(!isName (nameValue)){
+        setError(namee,"Emri nuk ploteson kushtet");
     }
     else{
-        alert("Name: " + name);
+        setSuccess(namee);
     }
+    if(surnameValue === ''){
+        setError(surname, "Mbiemri nuk mund te jete i zbrazet");
+    } else if(!isSurname(surnameValue)){
+        setError(surname, "Mbiemri nuk ploteson kushtet");
+    }
+    else{
+        setSuccess(surname);
+    } 
+    if(usernameValue === ''){
+        setError(username, "Username nuk mund te jete i zbrazet");
+    } else if(!isUsername(usernameValue)){
+        setError(username, "Username nuk ploteson kushtet");
+    }
+    else{
+        setSuccess(username);
+    }
+    if(emailValue === ''){
+        setError(email, "Email-i nuk mund te jete i zbrazet");
+    }else if(!isEmail(emailValue)){
+        setError(email, "Email-i nuk plotesone kushtet");
+    }
+    else{
+        setSuccess(email);
+    }
+    if(passwordValue === ''){
+        setError(password, "Passwordi nuk mund te jete i zbrazet");
+    } else if(!isPassword(passwordValue)){
+        setError(password, "Passwordi nuk ploteson kushtet");
+    }
+    else{
+        setSuccess(password);
+    }
+    if(password2Value === ''){
+        setError(password2, "Passwordi nuk mund te jete i zbrazet");
+    } else if(passwordValue !== password2Value){
+        setError(password2, "Passwordet nuk perputhen");
+    }
+    else{
+        setSuccess(password2);
+    }
+
     
+}
 
-    if(surname == ""){
-        snameMsg.innerText='Fill surname!';
-        event.preventDefault();
-    }
-    else{
-        alert("Surname: " + surname);
-    }
-   
+function setError(input,message){
+    const formControl = input.parentElement;
+    const small = formControl.querySelector("small");
 
+    small.innerText = message;
 
-    if(username == ""){
-        unameMsg.innerText='Fill username!';
-        event.preventDefault();
+    formControl.className = "form-control error";
+}
+function setSuccess(input){
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success';
+}
+
+function isName(namee){
+    return /^[A-Z][a-z]{2,15}/.test(namee);
+}
+function isSurname(surname){
+    return /^[A-Z][a-z]{2,15}/.test(surname);
+}
+function isUsername(username){
+    return /^\w+[_.]?\w{2,10}/.test(username);
+}
+function isEmail(email){
+    return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
     }
-    else{
-        alert("Username: " + username);
-    }
+function isPassword(password){
+    return /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(password);
+}
     
-
-    if(email == ""){
-        emailMsg.innerText='Fill e-mail!';
-        event.preventDefault();
-    }
-    else{
-        alert("E-mail: " + email);
-    }
-    
-
-    if(password == ""){
-        passMsg.innerText='Fill password!';
-        event.preventDefault();
-    }
-    else{
-        alert("Password: " + password);
-    }
-    
-} );
-if(nameRegex.test(name) == true){
-        alert("Name: " + name);
-    }
-    else{
-        nameMsg.innerText='The name does not fit the citeria!';
-        event.preventDefault();
-    }
-    if(snameRegex.test(surname) == true){
-        alert("Surname: " + surname);
-    }
-    else{
-        snameMsg.innerText='Surname does not fit the criteia!';
-        event.preventDefault();
-    }
-    if(unameRegex.test(username) == true){
-        alert("Username: " + username);
-    }
-    else{
-        unameMsg.innerText='Username does not fit the criteia!';
-        event.preventDefault();
-    }
-    if(emailRegex.test(email) == true){
-        alert("E-mail: " + email);
-    }
-    else{
-        emailMsg.innerText='E-mail does not fit the criteia!';
-        event.preventDefault();
-    }
-    if(passRegex.test(password) == true){
-        alert("Password: " + password);
-    }
-    else{
-        passMsg.innerText='Password does not fit the criteia!';
-        event.preventDefault();
-    }
-    if(password2 == ""){
-        pass1Msg.innerText='Fill password!';
-        event.preventDefault();
-    }
-    else{
-        alter("Password: " + password)
-    }
-    if(password2==password){
-        alter("Password" + password)
-    }
-    else{
-        pass1Msg.innerText='Passwords do not match!';
-        event.preventDefault();
-    }

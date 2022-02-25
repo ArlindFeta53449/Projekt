@@ -1,3 +1,34 @@
+<?php
+session_start();
+
+include("connection.php");
+include("function.php");
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    
+    $name =$_POST['name'];
+    $surname =$_POST['surname'];
+    $username =$_POST['username'];
+    $email =$_POST['email'];
+    $password =$_POST['password'];
+    if(!empty($name) && !empty($surname)
+    && !empty($username) && !empty($email)
+    && !empty($password)){
+        $user_id=random_num(20);
+        $query = "insert into users (user_id,name,surname,username,email,password) values('$name','$surname','$username','$email','$password')";
+        mysqli_query($con,$query);
+        header("Location:LogIn.php");
+        die;
+        
+    }
+    else{
+        echo "Keni shtypur te dhena jovalide";
+    }
+    
+}
+
+?>
+
 <!DOCTYPE HTML>
 <html style="display: flex;
 flex-direction: column;
@@ -79,28 +110,28 @@ align-items: center;">
             <img src="images/download.jpg" alt="Library" class="img">
          <div class="signUpBorder">
             <a href="index.php" class="imgL"><img src="images/Logoupdated1.png" alt="logo"   ></a>
-        <form class="signUp" id="form">
+        <form class="signUp" id="form" method="POST">
             <h2>SignUp</h2><br>
             <div class="first_row">
                 <div class = "form-control">
-            <input type="text" onfocus="this.value=''" value="Name" id="name" class="borders">
+            <input type="text" placeholder="Name" id="name" class="borders">
             <label style="color: red;" for="name" id="nameMsg"></label>
             <small>Error message</small>
             </div>
             <div class = "form-control">
-            <input type="text" onfocus="this.value=''"  value="Surname" id="surname" class="borders">
+            <input type="text"  placeholder="Surname" id="surname" class="borders">
             <label style="color: red;" for="surname" id="snameMsg"></label>
             <small>Error message</small>
         </div>
         </div><br>
         <div class = "form-control">
-            <input type="text" onfocus="this.value=''" value="Username" id="username" class="borders">
+            <input type="text"  placeholder="Username" id="username" class="borders">
             <label style="color: red;" for="username" id="unameMsg"></label>
             <small>Error message</small>
         </div>
             <br>
             <div class = "form-control">
-            <input type="text" onfocus="this.value=''" value="E-mail" id="email" class="borders">
+            <input type="text"  placeholder="E-mail" id="email" class="borders">
             <label style="color: red;" for="email" id="emailMsg"></label>
             <small>Error message</small>
         </div>
@@ -108,18 +139,18 @@ align-items: center;">
 
             <div class="first_row">
                 <div class = "form-control">
-            <input type="password" onfocus="this.value=''" value="Password"id="password" class="borders">
+            <input type="password" placeholder="Password"id="password" class="borders">
             <label style="color: red;" for="password" id="passMsg"></label>
             <small>Error message</small>
         </div>
             <div class = "form-control">
-            <input type="password" onfocus="this.value=''" value="Password"id="password2" class="borders">
+            <input type="password" placeholder="Password"id="password2" class="borders">
             <label style="color: red;" for="vPassword" id="pass1Msg"></label>
             <small>Error message</small>
         </div>
         </div>
             <br>
-            <input type="submit" onclick="event" value="SignUp" id = "signUpButton">
+            <input type="submit" name="button" placeholder="SignUp" id = "signUpButton">
             <br>
             <a href="LogIn.php" style="text-emphasis: none;"><p style="color:#2b81ff;">Have an account? Log In</p></a>
         </form>

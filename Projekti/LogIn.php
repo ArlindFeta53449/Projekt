@@ -1,3 +1,36 @@
+<?php
+session_start();
+ include("connection.php");
+include("function.php");
+
+$user_data = check_login($con);
+
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    $email =$_POST['email'];
+    $password =$_POST['password'];
+    
+    if(!empty($email)&& !empty($password) ){
+        $user_id=random_num(20);
+        $query = "select * into users where email =' $user_name' limit 1";
+        $result = mysqli_query($con,$query);
+        if($result){ 
+        if($result && mysqli_num_rows($result) > 0){
+        $user_data = mysqli_fetch_assoc($result);
+        if($user_data['password'] === $password)
+        {
+        $_SESSION['user_id'] = $user_data['user_id'];
+       header ("Location: index.php");
+        die;
+}
+    } }
+    
+        }
+        else{
+            echo "Email ose password eshte gabim";
+        }
+       }
+?>
+
 <!DOCTYPE html>
 <html style="display: flex;
 flex-direction: column;
@@ -31,7 +64,7 @@ align-items: center;">
             width: 500px;
             border-radius: 25px;
         }
-        #username{
+        #email{
         border-radius: 25px;
         border: 2px solid #2b81ff;
         padding: 20px; 
@@ -84,13 +117,13 @@ align-items: center;">
         <img src="images/download.jpg" alt="bookshelf" class="imgA">
         <div class="right-side">
          
-           <a href="index.php" class="imgL"><img src="images/Logoupdated1.png" alt="logo"   ></a>
+           <img src="images/Logoupdated1.png" alt="logo" class="imgL">
            
         <form>
             
                 <div class = "formulari">
                     <h2>LogIn</h2><br>
-                Username:<br><input type="text" id="username">
+                Email:<br><input type="email" id="email">
                 <br>
                 Password:<br><input type = "password" id = "password"> 
                 <br>

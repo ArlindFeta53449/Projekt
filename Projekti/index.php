@@ -1,3 +1,13 @@
+<?php
+session_start();
+include("connection.php");
+include("function.php");
+
+$user_data = check_login($con);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +28,8 @@
 			<li><a href="Books.php">Books</li></a>
 			<li><a href="aboutus.php">About Us</li></a>
             <li><a href="LogIn.php">LogIn/Register</li></a>
+            <li><a href ="logOut.php">LogOut</li></a>
+            <!-- <li><?php //echo $user_data['name'].$user_data['surname'];?></li>-->
         </ul>
     </div>
 

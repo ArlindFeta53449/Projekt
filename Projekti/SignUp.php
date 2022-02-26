@@ -4,25 +4,19 @@ session_start();
 include("connection.php");
 include("function.php");
 
+
     if($_SERVER['REQUEST_METHOD'] == "POST"){ 
     $name =$_POST['name'];
     $surname =$_POST['surname'];
     $username =$_POST['username'];
     $email =$_POST['email'];
     $password =$_POST['password'];
-    if(!empty($name) && !empty($surname)
-    && !empty($username) && !empty($email)
-    && !empty($password)){
+    
         $user_id=random_num(20);
-        $query = "insert into users (user_id,name,surname,username,email,password) values('$name','$surname','$username','$email','$password')";
+        $query = "insert into user (user_id,name,surname,username,email,password) values('$user_id','$name','$surname','$username','$email','$password')";
         mysqli_query($con,$query);
         header("Location:LogIn.php");
         die;
-        
-    }
-    else{
-   echo "Keni shtypur te dhena jovalide";
-   }
     
 }
 

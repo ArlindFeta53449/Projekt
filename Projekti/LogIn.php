@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     
     if(!empty($email)&& !empty($password) ){
         $user_id=random_num(20);
-        $query = "select * into users where email =' $user_name' limit 1";
+        $query = "select * into user where email =' $email' limit 1";
         $result = mysqli_query($con,$query);
         if($result){ 
         if($result && mysqli_num_rows($result) > 0){
